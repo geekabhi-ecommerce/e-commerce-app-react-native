@@ -33,17 +33,17 @@ export const FavoriteBody = ({
             }}
           >
             <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-              <CustomText style={{ color: "#fff" }}>Tiếp tục</CustomText>
+              <CustomText style={{ color: "#fff" }}>Continue</CustomText>
             </TouchableOpacity>
           </View>
         </View>
       ) : FavoriteProducts.length === 0 ? (
         <View style={styles.center}>
           <CustomText style={{ fontSize: 16 }}>
-            Không có sản phẩm trong mục yêu thích
+            No products in favorites
           </CustomText>
           <CustomText style={{ fontSize: 16 }}>
-            Bắt đầu thêm sản phẩm nào !
+            Start adding products yet!
           </CustomText>
         </View>
       ) : (

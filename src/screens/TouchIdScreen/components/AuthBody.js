@@ -72,7 +72,7 @@ export const AuthBody = () => {
       </View>
       <View style={styles.contentContainer}>
         <CustomText style={styles.text}>
-          Mở khóa bằng vân tay hoặc khuôn mặt
+          Unlock with fingerprint or face
         </CustomText>
         <Switch
           trackColor={{ false: "#767577", true: "#60c46b" }}

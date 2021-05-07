@@ -46,7 +46,7 @@ export const PaymentBody = ({ navigation, payByCard, setPayByCard, token }) => {
           />
           <View style={styles.cardContainer}>
             <CustomText style={{ ...styles.optionText, marginHorizontal: 0 }}>
-              Thanh toán bằng thẻ tín dụng
+              Pay by credit card
             </CustomText>
             <Image
               style={styles.cardImage}

@@ -53,7 +53,7 @@ export const FavoriteItem = ({ navigation, item }) => {
     try {
       await dispatch(addToCart(item));
       if (!unmounted.current) {
-        Alert.alert("Thêm thành công", "Sản phẩm đã được thêm vào giỏ hàng", [
+        Alert.alert("Added successfully "," The product has been added to the cart", [
           {
             text: "OK",
           },
@@ -65,15 +65,15 @@ export const FavoriteItem = ({ navigation, item }) => {
   };
   const removeFavoriteAct = () => {
     Alert.alert(
-      "Bỏ yêu thích",
-      "Bạn có muốn bỏ sản phẩm ra khỏi mục yêu thích?",
+      "Drop favorite ",
+      "Do you want to remove the product from your favorites?",
       [
         {
-          text: "Hủy",
+          text: "Cancel",
           style: "cancel",
         },
         {
-          text: "Đồng ý",
+          text: "Agree",
           onPress: () => dispatch(removeFavorite(item._id)),
         },
       ]
@@ -83,14 +83,14 @@ export const FavoriteItem = ({ navigation, item }) => {
     return (
       <View style={{ width: 170, flexDirection: "row" }}>
         {renderRightAction(
-          "Thêm vào giỏ",
+          "Add to Basket",
           "#ffab00",
           addToCartAct,
           140,
           progress
         )}
         {renderRightAction(
-          "Bỏ thích",
+          "Unlike",
           Colors.red,
           removeFavoriteAct,
           30,
@@ -153,7 +153,7 @@ export const FavoriteItem = ({ navigation, item }) => {
                 value={item.price}
                 displayType={"text"}
                 thousandSeparator={true}
-                suffix={" đ"}
+                suffix={" ₹"}
                 renderText={(formattedValue) => (
                   <View style={styles.priceContainer}>
                     <CustomText style={styles.price}>

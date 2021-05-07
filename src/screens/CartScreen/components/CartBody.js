@@ -47,7 +47,7 @@ export const CartBody = ({
           <CustomText>{Messages["user.login.require"]}</CustomText>
           <View style={styles.nextButton}>
             <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-              <CustomText style={{ color: "#fff" }}>Tiếp tục</CustomText>
+              <CustomText style={{ color: "#fff" }}>Continue</CustomText>
             </TouchableOpacity>
           </View>
         </View>

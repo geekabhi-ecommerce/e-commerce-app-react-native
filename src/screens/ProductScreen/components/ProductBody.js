@@ -67,7 +67,7 @@ export const ProductBody = ({
       </TouchableWithoutFeedback>
       {productsFilter.length === 0 ? (
         <CustomText style={{ textAlign: 'center', marginTop: 110 }}>
-          Không tìm thấy sản phẩm
+          No product found
         </CustomText>
       ) : (
         <AnimatedSectionList

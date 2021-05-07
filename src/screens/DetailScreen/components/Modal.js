@@ -66,7 +66,7 @@ export class ModalComp extends React.PureComponent {
               size={20}
             />
             <CustomText style={{ ...styles.success, color }}>
-              Sản phẩm đã được thêm vào giỏ hàng
+              The product has been added to cart
             </CustomText>
           </View>
           <View style={styles.modelInfo}>
@@ -87,13 +87,13 @@ export class ModalComp extends React.PureComponent {
                   {item.filename}
                 </CustomText>
                 <CustomText style={{ fontSize: 12, color: Colors.grey }}>
-                  Cung cấp bởi Cát Tường
+                  Provided by Cat Tuong
                 </CustomText>
               </View>
               <CustomText
                 style={{ marginTop: 5, fontSize: 14, color: Colors.text }}
               >
-                Thành tiền:
+                Into money:
               </CustomText>
               <NumberFormat price={item.price} />
             </View>
@@ -113,7 +113,7 @@ export class ModalComp extends React.PureComponent {
               ]}
               onPress={moveToCart}
             >
-              <CustomText style={styles.actionText}>Xem Giỏ Hàng</CustomText>
+              <CustomText style={styles.actionText}>View Shopping Cart</CustomText>
             </TouchableOpacity>
           </View>
         </View>

@@ -31,7 +31,7 @@ class PreOrderItem extends React.PureComponent {
             value={total.toString()}
             displayType={"text"}
             thousandSeparator={true}
-            suffix={" đ"}
+            suffix={" ₹"}
             renderText={(formattedValue) => (
               <View style={styles.priceContainer}>
                 <CustomText style={{ fontSize: 13, padding: 0 }}>

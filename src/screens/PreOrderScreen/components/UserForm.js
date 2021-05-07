@@ -53,7 +53,7 @@ const User = ({ getReceiver, checkValidation }) => {
           <Field
             name='name'
             maxLength={35}
-            label='Họ Tên'
+            label='Full Name'
             keyboardType='default'
             component={renderField}
             onChangeText={(value) => setReceiverName(value)}
@@ -63,7 +63,7 @@ const User = ({ getReceiver, checkValidation }) => {
           <Field
             name='phone'
             maxLength={10}
-            label='Số Điện Thoại'
+            label='Phone number'
             component={renderField}
             onChangeText={(value) => setPhone(value)}
             keyboardType='numeric'
@@ -74,7 +74,7 @@ const User = ({ getReceiver, checkValidation }) => {
           <Field
             name='address'
             maxLength={35}
-            label='Địa Chỉ'
+            label='Address'
             component={renderField}
             onChangeText={(value) => setAddress(value)}
             keyboardType='default'

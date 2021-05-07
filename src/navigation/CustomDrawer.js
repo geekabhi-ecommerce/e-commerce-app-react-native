@@ -147,8 +147,8 @@ export default (props) => {
                   fontWeight: "500",
                   fontFamily: "Roboto-Medium",
                 }}
-              >
-                Đăng xuất
+              >         
+              Log out
               </CustomText>
             </View>
           )}

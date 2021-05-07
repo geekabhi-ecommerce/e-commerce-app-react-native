@@ -235,8 +235,8 @@ export class Header extends React.Component {
                   style={styles.image_placeholder}
                 />
                 <Text style={styles.image_placeholder_text}>
-                  Nhập vào từ khóa{'\n'}
-                  để tìm kiếm :D
+                  Enter keywords{'\n'}
+                  to find :D
                 </Text>
               </View>
             ) : (
@@ -249,7 +249,7 @@ export class Header extends React.Component {
               >
                 {this.state.productsFilter.length === 0 ? (
                   <Text style={styles.image_placeholder_text}>
-                    Không tìm thấy sản phầm
+                    Product not found
                   </Text>
                 ) : (
                   <FlatList
