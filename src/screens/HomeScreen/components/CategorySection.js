@@ -21,9 +21,9 @@ export class CategorySection extends React.PureComponent {
     const stones = data.filter((stone) => stone.type === "stone");
     function getItems() {
       const items =
-        name === "Vòng Thạch Anh"
+        name === "Quartz Ring"
           ? bracelets
-          : name === "Đá Ruby"
+          : name === "Ruby stone"
           ? stones
           : rings;
       return items;

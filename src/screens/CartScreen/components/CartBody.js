@@ -28,12 +28,12 @@ export const CartBody = ({
 }) => {
   const dispatch = useDispatch();
   const onRemove = (itemId) => {
-    Alert.alert("Bỏ giỏ hàng", "Bạn có chắc bỏ sản phẩm khỏi giỏ hàng?", [
+    Alert.alert("Cart abandonment "," Are you sure you remove products from the cart?", [
       {
-        text: "Hủy",
+        text: "Cancel",
       },
       {
-        text: "Đồng ý",
+        text: "Agree",
         onPress: () => {
           dispatch(removeFromCart(carts._id, itemId));
         },

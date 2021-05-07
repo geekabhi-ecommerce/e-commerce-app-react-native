@@ -208,7 +208,7 @@ export class Header extends React.Component {
                 </Animated.View>
                 <TextInput
                   ref='input'
-                  placeholder='Tìm kiếm sản phẩm'
+                  placeholder='Search product'
                   clearButtonMode='always'
                   value={this.state.keyword}
                   onChangeText={(value) => this.searchFilterFunction(value)}

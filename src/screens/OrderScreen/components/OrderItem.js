@@ -34,14 +34,14 @@ export const OrderItem = ({ order }) => {
     <View style={styles.container}>
       <View style={styles.summary}>
         <View style={styles.textContainer}>
-          <CustomText style={styles.text}>Mã đơn: </CustomText>
+          <CustomText style={styles.text}>Single code: </CustomText>
           <CustomText style={styles.detail}>
             CT-{order._id.substr(order._id.length - 10)}
           </CustomText>
         </View>
 
         <View style={styles.textContainer}>
-          <CustomText style={styles.text}>Ngày đặt: </CustomText>
+          <CustomText style={styles.text}>Date of booking: </CustomText>
           <CustomText style={styles.detail}>
             {moment(order.date).format("Do MMMM  YYYY, hh:mm a ")}
           </CustomText>
@@ -56,21 +56,21 @@ export const OrderItem = ({ order }) => {
         {showDetails ? (
           <View>
             <View style={styles.textContainer}>
-              <CustomText style={styles.text}>Tên người nhận: </CustomText>
+              <CustomText style={styles.text}>Recipient's name: </CustomText>
               <CustomText style={styles.detail}>{order.name}</CustomText>
             </View>
 
             <View style={styles.textContainer}>
-              <CustomText style={styles.text}>Địa chỉ: </CustomText>
+              <CustomText style={styles.text}>Address: </CustomText>
               <CustomText style={styles.detail}>{order.address}</CustomText>
             </View>
             <View style={styles.textContainer}>
-              <CustomText style={styles.text}>Số điện thoại: </CustomText>
+              <CustomText style={styles.text}>Phone number: </CustomText>
               <CustomText style={styles.detail}>{order.phone}</CustomText>
             </View>
             <View style={styles.textContainer}>
               <CustomText style={styles.text}>
-                Phương thức thanh toán:{" "}
+              Payment methods:{" "}
               </CustomText>
               <CustomText style={styles.detail}>
                 {order.paymentMethod}
@@ -80,7 +80,7 @@ export const OrderItem = ({ order }) => {
               <Steps position={status()} />
             </View>
 
-            <CustomText style={styles.text}>Sản phẩm đã đặt:</CustomText>
+            <CustomText style={styles.text}>Products ordered:</CustomText>
             <FlatList
               data={order.items}
               keyExtractor={(item) => item.item._id}
@@ -95,7 +95,7 @@ export const OrderItem = ({ order }) => {
                 justifyContent: "space-between",
               }}
             >
-              <CustomText style={styles.text}>Tổng tiền:</CustomText>
+              <CustomText style={styles.text}>Total amount:</CustomText>
               <NumberFormat
                 price={order.totalAmount.toString()}
                 style={{ fontSize: 15 }}

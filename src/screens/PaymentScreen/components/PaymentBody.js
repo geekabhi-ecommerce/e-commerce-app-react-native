@@ -13,7 +13,7 @@ const { width } = Dimensions.get("window");
 export const PaymentBody = ({ navigation, payByCard, setPayByCard, token }) => {
   return (
     <View style={styles.container}>
-      <CustomText style={styles.title}>Chọn Hình Thức Thanh Toán</CustomText>
+      <CustomText style={styles.title}>Select Payment Method</CustomText>
       <View style={styles.optionContainer}>
         <View style={styles.option}>
           <Checkbox
@@ -29,7 +29,7 @@ export const PaymentBody = ({ navigation, payByCard, setPayByCard, token }) => {
             color={Colors.lighter_green}
             style={{ marginLeft: 10 }}
           />
-          <CustomText style={styles.optionText}>Thanh toán tiền mặt</CustomText>
+          <CustomText style={styles.optionText}>Cash payment</CustomText>
         </View>
         <View style={styles.option}>
           <Checkbox
