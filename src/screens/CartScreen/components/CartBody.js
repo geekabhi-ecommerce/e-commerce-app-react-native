@@ -54,7 +54,7 @@ export const CartBody = ({
       ) : carts.items.length === 0 ? (
         <View style={styles.center}>
           <CustomText style={{ fontSize: 16 }}>
-            Chưa có sản phẩm nào trong giỏ hàng
+            No products in the shopping cart
           </CustomText>
         </View>
       ) : (

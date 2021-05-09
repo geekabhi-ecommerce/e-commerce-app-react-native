@@ -173,7 +173,7 @@ export const HomeStackScreen = () => (
     <HomeStack.Screen
       name='Home'
       component={HomeScreen}
-      //animationEnabled: false , nằm trong option
+      //animationEnabled: false , inside option
     />
     <HomeStack.Screen name='Detail' component={DetailScreen} />
     <HomeStack.Screen name='Cart' component={CartStackScreen} />
@@ -314,7 +314,7 @@ export const DrawerNavigator = () => {
                   fontFamily: 'Roboto-Medium',
                 }}
               >
-                Đăng nhập
+                Log in
               </CustomText>
             ),
             drawerIcon: ({ focused }) => (
