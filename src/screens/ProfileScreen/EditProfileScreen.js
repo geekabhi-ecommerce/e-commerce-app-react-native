@@ -15,7 +15,7 @@ export const EditProfileScreen = (props) => {
   const { user } = props.route.params;
   const loading = useSelector((state) => state.auth.isLoading);
   const [address, setAddress] = useState(user.address);
-  const [phone, setPhone] = useState(user.phone);
+  const [phone, setEmail] = useState(user.email);
   const [disableButton, setDisableBotton] = useState(true);
   const dispatch = useDispatch();
 
@@ -53,23 +53,24 @@ export const EditProfileScreen = (props) => {
       <View>
         <View style={styles.infoContainer}>
           <TextInput
-            label='Email'
-            value={user.email}
+            label='Phone'
+            value={user.phonenumber}
             disabled
             mode='outlined'
             theme={{ colors: { primary: Colors.leave_green } }}
             selectionColor={Colors.leave_green}
             style={{ marginVertical: 10 }}
+            keyboardType='phone-pad'
           />
           <TextInput
-            label='Phone'
-            value={phone}
+            label='Email'
+            value={user.email}
             mode='outlined'
             theme={{ colors: { primary: Colors.leave_green } }}
             selectionColor={Colors.leave_green}
-            onChangeText={(text) => setPhone(text)}
+            onChangeText={(text) => setEmail(text)}
             style={{ marginVertical: 10 }}
-            keyboardType='numeric'
+            keyboardType="default"
             returnKeyType='done'
           />
           <TextInput

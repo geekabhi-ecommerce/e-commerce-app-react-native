@@ -21,10 +21,10 @@ import { ForgetPassword } from "../../reducers";
 //Validation
 const validate = (values) => {
   const errors = {};
-  if (!values.email) {
-    errors.email = "Email not be empty";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Email not valid";
+  if (!values.phonenumber) {
+    errors.phonenumber = "Phone Number should not be blank";
+  } else if (!/^[0-9]{10}$/i.test(values.phonenumber)) {
+    errors.phonenumber = "Invalid Phone Number";
   }
   return errors;
 };
@@ -41,7 +41,7 @@ const SignupForm = (props) => {
   }, []);
   const submit = async (values) => {
     try {
-      await dispatch(ForgetPassword(values.email));
+      await dispatch(ForgetPassword(values.phonenumber));
       if (!unmounted.current) {
         props.navigation.navigate("FinishResetScreen", {
           value: values,
@@ -69,10 +69,10 @@ const SignupForm = (props) => {
       <View style={styles.content}>
         <CustomText style={styles.title}> Forget Password </CustomText>
         <Field
-          name='email'
-          keyboardType='email-address'
-          icon='email'
-          label='Email'
+          name='phonenumber'
+          keyboardType='phone-pad'
+          icon='cellphone'
+          label='Phone'
           component={renderField}
         />
         <TouchableOpacity

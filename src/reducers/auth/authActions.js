@@ -26,7 +26,7 @@ const saveDataToStorage = (name, data) => {
   );
 };
 
-export const SignUp = (name, email, password) => {
+export const SignUp = (name, phonenumber, password) => {
   return async (dispatch) => {
     dispatch({
       type: AUTH_LOADING,
@@ -41,7 +41,7 @@ export const SignUp = (name, email, password) => {
           method: 'POST',
           body: JSON.stringify({
             name,
-            email,
+            phonenumber,
             password,
           }),
         }),
@@ -63,7 +63,7 @@ export const SignUp = (name, email, password) => {
 };
 
 //Login
-export const Login = (email, password) => {
+export const Login = (phonenumber, password) => {
   return async (dispatch) => {
     dispatch({
       type: AUTH_LOADING,
@@ -78,7 +78,7 @@ export const Login = (email, password) => {
           },
           method: 'POST',
           body: JSON.stringify({
-            email,
+            phonenumber,
             password,
             pushTokens: [pushToken],
           }),
@@ -187,7 +187,7 @@ export const UploadProfilePic = (imageUri, filename, type) => {
   };
 };
 
-export const ForgetPassword = (email) => {
+export const ForgetPassword = (phonenumber) => {
   return async (dispatch) => {
     dispatch({
       type: AUTH_LOADING,
@@ -201,7 +201,7 @@ export const ForgetPassword = (email) => {
           },
           method: 'POST',
           body: JSON.stringify({
-            email,
+            phonenumber,
           }),
         }),
       );

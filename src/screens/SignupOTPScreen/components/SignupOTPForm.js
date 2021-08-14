@@ -29,10 +29,10 @@ const { width, height } = Dimensions.get("window");
 //Validation
 const validate = (values) => {
   const errors = {};
-  if (!values.phonenumber) {
-    errors.phonenumber = "Phone Number should not be blank";
-  } else if (!/^[0-9]{10}$/i.test(values.phonenumber)) {
-    errors.phonenumber = "Invalid Phone Number";
+  if (!values.email) {
+    errors.email = "Email is not vacant";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email";
   }
   if (!values.password) {
     errors.password = "Password cannot be left blank";
@@ -44,12 +44,12 @@ const validate = (values) => {
   } else if (values.confirmpassword !== values.password) {
     errors.confirmpassword = "Confirmation password does not match";
   }
-  if (!values.username) {
-    errors.username = "Name cannot be left blank";
-  } else if (values.username.length > 20) {
-    errors.username = "Name must not exceed 20 characters";
-  } else if (values.username.length < 6) {
-    errors.username = "Name must be more than 6 characters";
+  if (!values.phonenumber) {
+    errors.phonenumber = "Name cannot be left blank";
+  } else if (values.phonenumber.length > 20) {
+    errors.phonenumber = "Name must not exceed 20 characters";
+  } else if (values.phonenumber.length < 6) {
+    errors.phonenumber = "Name must be more than 6 characters";
   }
 
   return errors;
@@ -70,7 +70,7 @@ const Signup = (props) => {
 
   const submit = async (values) => {
     try {
-      await dispatch(SignUpAct(values.username, values.phonenumber, values.password));
+      await dispatch(SignUpAct(values.phonenumber, values.email, values.password));
       reset();
       if (!unmounted.current) {
         Alert.alert("Signup Successfully", "You can login now", [
@@ -116,18 +116,18 @@ const Signup = (props) => {
             </View>
             <View>
               <Field
-                name="username"
+                name="phonenumber"
                 keyboardType="default"
-                label="Your Name"
+                label="Phone Number"
                 component={renderField}
                 icon="id-card"
                 autoCapitalize={true}
               />
               <Field
-                name="phonenumber"
-                keyboardType="phone-pad"
-                label="phonenumber"
-                icon="cellphone"
+                name="email"
+                keyboardType="email-address"
+                label="Email"
+                icon="email"
                 component={renderField}
               />
               <Field

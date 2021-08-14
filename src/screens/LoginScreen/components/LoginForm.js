@@ -35,10 +35,10 @@ const { height } = Dimensions.get("window");
 //Validation
 const validate = (values) => {
   const errors = {};
-  if (!values.email) {
-    errors.email = "Email is blank";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Invalid email";
+  if (!values.phonenumber) {
+    errors.phonenumber = "Phone Number is blank";
+  } else if (!/^[0-9]{10}$/i.test(values.phonenumber)) {
+    errors.phonenumber = "Invalid phone number";
   }
   if (!values.password) {
     errors.password = "Password cannot be left blank";
@@ -64,7 +64,7 @@ const Login = (props) => {
     });
     if (result.success) {
       const data = await JSON.parse(resData);
-      dispatch(LoginAction(data.email, data.password));
+      dispatch(LoginAction(data.phonenumber, data.password));
     }
   };
 
@@ -95,7 +95,7 @@ const Login = (props) => {
 
   const submit = async (values) => {
     try {
-      await dispatch(LoginAction(values.email, values.password));
+      await dispatch(LoginAction(values.phonenumber, values.password));
       props.navigation.navigate("Home");
     } catch (err) {
       alert(err);
@@ -130,10 +130,10 @@ const Login = (props) => {
           >
             <View>
               <Field
-                name="email"
-                keyboardType="email-address"
-                label="Email"
-                icon="email"
+                name="phonenumber"
+                keyboardType="phone-pad"
+                label="phonenumber"
+                icon="cellphone"
                 component={renderField}
               />
               <Field

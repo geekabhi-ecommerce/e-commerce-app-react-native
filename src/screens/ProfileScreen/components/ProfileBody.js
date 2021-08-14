@@ -19,11 +19,8 @@ export const ProfileBody = ({
         <CustomText style={styles.title}>Personal information</CustomText>
       </View>
       <Detail icon='person' content={user.name} />
-      <Detail icon='email-outline' content={user.email} />
-      <Detail
-        icon='phone'
-        content={user.phone.length === 0 ? "Not added yet" : user.phone}
-      />
+      <Detail icon='email-outline' content={user.email === undefined ? "Not added yet" : user.email} />
+      <Detail icon='phone' content={user.phonenumber} />
       <Detail
         icon='location-on'
         content={user.address.length === 0 ? "Not added yet" : user.address}

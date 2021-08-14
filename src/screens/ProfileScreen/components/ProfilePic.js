@@ -4,7 +4,6 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  ActionSheetIOS,
   Platform,
 } from "react-native";
 //Color
